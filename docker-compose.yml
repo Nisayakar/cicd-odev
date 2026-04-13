@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    image: cicd-odev-backend:latest
+    container_name: cicd-odev-backend
+    ports:
+      - "8082:8082"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    image: cicd-odev-frontend:latest
+    container_name: cicd-odev-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
