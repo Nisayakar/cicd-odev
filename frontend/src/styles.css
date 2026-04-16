@@ -90,6 +90,20 @@ h1 {
   background: rgba(255, 255, 255, 0.12);
 }
 
+.status-card.status-image {
+  align-items: center;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.status-card.status-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
 .status-card strong {
   font-size: 2rem;
 }

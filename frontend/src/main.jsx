@@ -8,6 +8,9 @@ const emptyForm = {
   priority: 'MEDIUM'
 };
 
+const profileImageUrl =
+  'https://panel.inonu.edu.tr/servlet/image/AVATAR/1779/26-05-2025_080908445_225x300.png';
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [status, setStatus] = useState(null);
@@ -108,10 +111,10 @@ function App() {
           </p>
         </div>
 
-        <div className={`status-card ${status?.status === 'ok' ? 'online' : 'offline'}`}>
-          <span>Backend baglanti durumu</span>
-          <strong>{status?.status === 'ok' ? 'Online' : 'Kontrol ediliyor'}</strong>
-          <small>{status ? `${status.service} servisi - port ${status.port}` : 'Bekleniyor'}</small>
+        <div
+          className={`status-card status-image ${status?.status === 'ok' ? 'online' : 'offline'}`}
+        >
+          <img src={profileImageUrl} alt="Profil fotografi" />
         </div>
       </section>
 
